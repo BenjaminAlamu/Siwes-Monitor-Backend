@@ -22,6 +22,19 @@
 
 module.exports.routes = {
 
+
+      /*
+     * Company Routes
+     */
+  'POST /createCompany': {
+    controller: 'CompanyController',
+    action: 'create'
+  },
+  'POST /listCompany': {
+      controller: 'CompanyController',
+      action: 'list'
+  },
+
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
