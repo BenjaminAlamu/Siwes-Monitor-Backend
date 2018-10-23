@@ -6,67 +6,39 @@
  */
 
 module.exports = {
-
   attributes: {
     //(firstname, lastname, school, companyAccept, studentAccept,companyID)
-    firstName: {
-      type: 'string',
-      required: true,
-    },
-    lastName: {
-      type: 'string',
-      required: true,
-    },
-    school: {
-      type: 'string',
-      required: true,
+    student: {
+      model: "student",
+      required: true
     },
     companyAccept: {
-      type: 'boolean',
-      defaultsTo: false
+      type: "string",
+      defaultsTo: "N/A"
     },
     studentAccept: {
-      type: 'boolean',
-      defaultsTo: "none"
+      type: "string",
+      defaultsTo: "N/A"
     },
-    companyReject: {
-      type: 'boolean',
-      defaultsTo: false
+    companyStatus: {
+      type: "string",
+      defaultsTo: "N/A"
     },
-    studentReject: {
-      type: 'boolean',
-      defaultsTo: false
+    studentStatus: {
+      type: "string",
+      defaultsTo: "N/A"
     },
-    studentID: {
-      type: 'string',
+    company: {
+      model: "company",
       required: true
-    },
-    companyID: {
-      type: 'string',
-      required: true
-    },
+    }
   },
   validationMessages: {
-    firstName: {
-        string: 'First Name is required',
-        required: 'First Name is required',
+    student: {
+      required: "Student is required"
     },
-    lastName: {
-      string: 'Last Name is required',
-      required: 'Last Name is required',
-    },
-    school: {
-      string: 'School Name is required',
-      required: 'School Name is required'
-    },
-    studentID: {
-      string: 'Student ID missing',
-      required: 'Student ID must be passed with request'
-    },
-    companyID: {
-      string: 'Company ID missing',
-      required: 'Company ID must be passed with request'
+    company: {
+      required: "Company is required"
     }
   }
 };
-
