@@ -8,13 +8,25 @@
 module.exports = {
   attributes: {
     //(firstname, lastname, school, companyAccept, studentAccept,companyID)
-    studentName: {
-      type: "string",
+    student: {
+      model: "student",
       required: true
     },
-    school: {
+    companyAccept: {
       type: "string",
-      required: true
+      defaultsTo: "N/A"
+    },
+    companyReject: {
+      type: "string",
+      defaultsTo: "N/A"
+    },
+    studentAccept: {
+      type: "string",
+      defaultsTo: "N/A"
+    },
+    studentReject: {
+      type: "string",
+      defaultsTo: "N/A"
     },
     companyStatus: {
       type: "string",
@@ -24,35 +36,31 @@ module.exports = {
       type: "string",
       defaultsTo: "N/A"
     },
-    student: {
-      type: "string",
-      required: true
-    },
     company: {
-      type: "string",
+      model: "company",
       required: true
-    }
-  },
-  validationMessages: {
-    firstName: {
-      string: "First Name is required",
-      required: "First Name is required"
-    },
-    lastName: {
-      string: "Last Name is required",
-      required: "Last Name is required"
-    },
-    school: {
-      string: "School Name is required",
-      required: "School Name is required"
-    },
-    studentID: {
-      string: "Student ID missing",
-      required: "Student ID must be passed with request"
-    },
-    companyID: {
-      string: "Company ID missing",
-      required: "Company ID must be passed with request"
     }
   }
+  // validationMessages: {
+  //   firstName: {
+  //     string: "First Name is required",
+  //     required: "First Name is required"
+  //   },
+  //   lastName: {
+  //     string: "Last Name is required",
+  //     required: "Last Name is required"
+  //   },
+  //   school: {
+  //     string: "School Name is required",
+  //     required: "School Name is required"
+  //   },
+  //   studentID: {
+  //     string: "Student ID missing",
+  //     required: "Student ID must be passed with request"
+  //   },
+  //   companyID: {
+  //     string: "Company ID missing",
+  //     required: "Company ID must be passed with request"
+  //   }
+  // }
 };

@@ -47,7 +47,9 @@ module.exports = {
   },
   companyAccept: async function(req, res) {
     try {
-      let id = req.params.id;
+      let id = req.body.id;
+      let company = req.body.company;
+      let student = req.body.student;
       let payload = await Application.update({ id: req.body.id }).set({
         companyStatus: "Accepted"
       });
