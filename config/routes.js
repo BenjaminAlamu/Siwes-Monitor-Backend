@@ -50,6 +50,14 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "create"
   },
+  "GET /list/student-applications/:id": {
+    controller: "ApplicationController",
+    action: "listStudents"
+  },
+  "GET /list/company-applications/:id": {
+    controller: "ApplicationController",
+    action: "listCompanies"
+  },
 
   /***************************************************************************
    *                                                                          *

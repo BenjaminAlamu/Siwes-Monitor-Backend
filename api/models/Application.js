@@ -40,27 +40,13 @@ module.exports = {
       model: "company",
       required: true
     }
+  },
+  validationMessages: {
+    student: {
+      required: "Student is required"
+    },
+    company: {
+      required: "Company is required"
+    }
   }
-  // validationMessages: {
-  //   firstName: {
-  //     string: "First Name is required",
-  //     required: "First Name is required"
-  //   },
-  //   lastName: {
-  //     string: "Last Name is required",
-  //     required: "Last Name is required"
-  //   },
-  //   school: {
-  //     string: "School Name is required",
-  //     required: "School Name is required"
-  //   },
-  //   studentID: {
-  //     string: "Student ID missing",
-  //     required: "Student ID must be passed with request"
-  //   },
-  //   companyID: {
-  //     string: "Company ID missing",
-  //     required: "Company ID must be passed with request"
-  //   }
-  // }
 };

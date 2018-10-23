@@ -25,12 +25,33 @@ module.exports = {
       });
     }
   },
-  list: async function(req, res) {
+  listStudents: async function(req, res) {
     try {
-      let companyID = req.body.company;
+      let companyID = req.params.id;
+      console.log(companyID);
       const data = await Application.find({
         where: { company: companyID }
+      }).populate("student");
+      return res.send({
+        status: 200,
+        success: true,
+        data
       });
+    } catch (err) {
+      res.send({
+        status: 400,
+        success: false,
+        message: err.message,
+        err
+      });
+    }
+  },
+  listCompanies: async function(req, res) {
+    try {
+      let studentID = req.params.id;
+      const data = await Application.find({
+        where: { student: studentID }
+      }).populate("company");
       return res.send({
         status: 200,
         success: true,
