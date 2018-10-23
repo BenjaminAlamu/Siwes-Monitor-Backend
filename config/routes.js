@@ -58,6 +58,22 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "listCompanies"
   },
+  "GET /applications/company/accept/:id": {
+    controller: "ApplicationController",
+    action: "companyAccept"
+  },
+  "GET /applications/company/reject/:id": {
+    controller: "ApplicationController",
+    action: "companyReject"
+  },
+  "GET /applications/student/accept/:id": {
+    controller: "ApplicationController",
+    action: "studentAccept"
+  },
+  "GET /applications/student/reject/:id": {
+    controller: "ApplicationController",
+    action: "studentReject"
+  },
 
   /***************************************************************************
    *                                                                          *

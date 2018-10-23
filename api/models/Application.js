@@ -16,15 +16,7 @@ module.exports = {
       type: "string",
       defaultsTo: "N/A"
     },
-    companyReject: {
-      type: "string",
-      defaultsTo: "N/A"
-    },
     studentAccept: {
-      type: "string",
-      defaultsTo: "N/A"
-    },
-    studentReject: {
       type: "string",
       defaultsTo: "N/A"
     },

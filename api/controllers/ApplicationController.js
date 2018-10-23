@@ -68,12 +68,9 @@ module.exports = {
   },
   companyAccept: async function(req, res) {
     try {
-      let id = req.body.id;
-      let company = req.body.company;
-      let student = req.body.student;
-      let payload = await Application.update({ id: req.body.id }).set({
-        companyStatus: "Accepted"
-      });
+      await Application.update({
+        id: req.params.id
+      }).set({ companyStatus: "Accepted", companyAccept: "true" });
       //Call notification controller
       return res.send({
         status: 200,
@@ -90,10 +87,10 @@ module.exports = {
   },
   companyReject: async function(req, res) {
     try {
-      let id = req.params.id;
-      let payload = await Application.update({
-        id: req.body.id
-      }).set({ companyStatus: "Rejected" });
+      await Application.update({
+        id: req.params.id
+      }).set({ companyStatus: "Rejected", companyAccept: "false" });
+      //Call notification controller
       return res.send({
         status: 200,
         success: true
@@ -109,10 +106,10 @@ module.exports = {
   },
   studentAccept: async function(req, res) {
     try {
-      let id = req.params.id;
-      let payload = await Application.update({
-        id: req.body.id
-      }).set({ studentStatus: "Accepted" });
+      await Application.update({
+        id: req.params.id
+      }).set({ studentStatus: "Accepted", studentAccept: "true" });
+      //Call notification controller
       return res.send({
         status: 200,
         success: true
@@ -128,10 +125,10 @@ module.exports = {
   },
   studentReject: async function(req, res) {
     try {
-      let id = req.params.id;
-      let payload = await Application.update({
-        id: req.body.id
-      }).set({ studentStatus: "Rejected" });
+      await Application.update({
+        id: req.params.id
+      }).set({ studentStatus: "Rejected", studentAccept: "false" });
+      //Call notification controller
       return res.send({
         status: 200,
         success: true
