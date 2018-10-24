@@ -58,7 +58,7 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "listCompanies"
   },
-  "GET /applications/company/accept/:id": {
+  "POST /applications/company/accept/": {
     controller: "ApplicationController",
     action: "companyAccept"
   },
@@ -66,7 +66,7 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "companyReject"
   },
-  "GET /applications/student/accept/:id": {
+  "POST /applications/student/accept/": {
     controller: "ApplicationController",
     action: "studentAccept"
   },

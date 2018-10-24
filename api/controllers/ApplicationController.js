@@ -10,6 +10,7 @@ module.exports = {
     try {
       let payload = req.body;
       const data = await Application.create(payload);
+
       return res.send({
         status: 200,
         success: true,
@@ -69,7 +70,7 @@ module.exports = {
   companyAccept: async function(req, res) {
     try {
       await Application.update({
-        id: req.params.id
+        id: req.body.id
       }).set({ companyStatus: "Accepted", companyAccept: "true" });
       //Call notification controller
       return res.send({
@@ -106,8 +107,25 @@ module.exports = {
   },
   studentAccept: async function(req, res) {
     try {
+      //Check placement and ensure that the user doesnt already have a placement
+      const check = await Placements.find({
+        where: { student: req.body.student, status: "active" }
+      });
+      if (check.length > 0) {
+        return res.send({
+          status: 400,
+          success: false,
+          message: "You already have a company"
+        });
+      }
+      //Create the placement object and add to the placement model
+      let placement = {
+        student: req.body.student,
+        company: req.body.company
+      };
+      const place = await Placements.create(placement);
       await Application.update({
-        id: req.params.id
+        id: req.body.id
       }).set({ studentStatus: "Accepted", studentAccept: "true" });
       //Call notification controller
       return res.send({
