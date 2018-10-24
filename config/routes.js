@@ -58,7 +58,7 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "listCompanies"
   },
-  "GET /applications/company/accept/:id": {
+  "POST /applications/company/accept/": {
     controller: "ApplicationController",
     action: "companyAccept"
   },
@@ -66,13 +66,30 @@ module.exports.routes = {
     controller: "ApplicationController",
     action: "companyReject"
   },
-  "GET /applications/student/accept/:id": {
+  "POST /applications/student/accept/": {
     controller: "ApplicationController",
     action: "studentAccept"
   },
   "GET /applications/student/reject/:id": {
     controller: "ApplicationController",
     action: "studentReject"
+  },
+
+  /*
+   * Placement Routes
+   */
+
+  "POST /placement/student/end": {
+    controller: "PlacementsController",
+    action: "studentEnd"
+  },
+  "POST /placement/company/terminate": {
+    controller: "PlacementsController",
+    action: "companyTerminate"
+  },
+  "POST /placement/company/end": {
+    controller: "PlacementsController",
+    action: "companyEnd"
   },
 
   /***************************************************************************
