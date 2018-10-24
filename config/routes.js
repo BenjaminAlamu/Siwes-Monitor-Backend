@@ -75,6 +75,23 @@ module.exports.routes = {
     action: "studentReject"
   },
 
+  /*
+   * Placement Routes
+   */
+
+  "POST /placement/student/end": {
+    controller: "PlacementsController",
+    action: "studentEnd"
+  },
+  "POST /placement/company/terminate": {
+    controller: "PlacementsController",
+    action: "companyTerminate"
+  },
+  "POST /placement/company/end": {
+    controller: "PlacementsController",
+    action: "companyEnd"
+  },
+
   /***************************************************************************
    *                                                                          *
    * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *

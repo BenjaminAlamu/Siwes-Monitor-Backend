@@ -20,6 +20,10 @@ module.exports = {
       type: "boolean",
       defaultsTo: false
     },
+    terminateReason: {
+      string: "string",
+      defaultsTo: "N/A"
+    },
     studentEnd: {
       type: "boolean",
       defaultsTo: false
