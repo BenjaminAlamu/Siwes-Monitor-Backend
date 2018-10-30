@@ -92,6 +92,35 @@ module.exports.routes = {
     action: "companyEnd"
   },
 
+  /*
+  * Report Routes
+  */
+
+  "POST /report/create": {
+    controller: "ReportController",
+    action: "studentEnd"
+  },
+  "GET /report/student/view": {
+    controller: "ReportController",
+    action: "studentView"
+  },
+  "GET /report/company/view": {
+    controller: "ReportController",
+    action: "companyView"
+  },
+  "GET /report/staff/view": {
+    controller: "ReportController",
+    action: "staffView"
+  },
+  "POST /report/staff/approve": {
+    controller: "ReportController",
+    action: "staffApprove"
+  },
+  "POST /report/company/approve": {
+    controller: "ReportController",
+    action: "companyApprove"
+  },
+
   /***************************************************************************
    *                                                                          *
    * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
