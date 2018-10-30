@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  create: async function(req, res) {
+  create: async function (req, res) {
     try {
       let payload = req.body;
       const data = await Application.create(payload);
@@ -26,7 +26,7 @@ module.exports = {
       });
     }
   },
-  listStudents: async function(req, res) {
+  listStudents: async function (req, res) {
     try {
       let companyID = req.params.id;
       console.log(companyID);
@@ -47,7 +47,7 @@ module.exports = {
       });
     }
   },
-  listCompanies: async function(req, res) {
+  listCompanies: async function (req, res) {
     try {
       let studentID = req.params.id;
       const data = await Application.find({
@@ -67,7 +67,7 @@ module.exports = {
       });
     }
   },
-  companyAccept: async function(req, res) {
+  companyAccept: async function (req, res) {
     try {
       await Application.update({
         id: req.body.id
@@ -86,7 +86,7 @@ module.exports = {
       });
     }
   },
-  companyReject: async function(req, res) {
+  companyReject: async function (req, res) {
     try {
       await Application.update({
         id: req.params.id
@@ -105,7 +105,7 @@ module.exports = {
       });
     }
   },
-  studentAccept: async function(req, res) {
+  studentAccept: async function (req, res) {
     try {
       //Check placement and ensure that the user doesnt already have a placement
       const check = await Placements.find({
@@ -124,9 +124,15 @@ module.exports = {
         company: req.body.company
       };
       const place = await Placements.create(placement);
+
+      //Edit the company atrribute of the student model
+      const edit = await Student.update({
+        id: req.body.id
+      }).set({ company: req.company.id });
       await Application.update({
         id: req.body.id
       }).set({ studentStatus: "Accepted", studentAccept: "true" });
+
       //Call notification controller
       return res.send({
         status: 200,
@@ -141,7 +147,7 @@ module.exports = {
       });
     }
   },
-  studentReject: async function(req, res) {
+  studentReject: async function (req, res) {
     try {
       await Application.update({
         id: req.params.id

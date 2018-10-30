@@ -11,6 +11,14 @@ module.exports = {
       model: "student",
       required: true
     },
+    staff: {
+      model: "staff",
+      required: true
+    },
+    company: {
+      model: "company",
+      required: true
+    },
     monday: {
       type: "string",
       required: true
@@ -55,6 +63,12 @@ module.exports = {
   validationMessages: {
     student: {
       required: "Student is required"
+    },
+    company: {
+      required: "Company is required"
+    },
+    staff: {
+      required: "Staff is required"
     },
     monday: {
       required: "You need to enter what you did on Monday"

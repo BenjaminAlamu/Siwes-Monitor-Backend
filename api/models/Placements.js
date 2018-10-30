@@ -35,6 +35,10 @@ module.exports = {
     company: {
       model: "company",
       required: true
+    },
+    school: {
+      model: "school",
+      required: true
     }
   },
   validationMessages: {
@@ -43,6 +47,9 @@ module.exports = {
     },
     company: {
       required: "Company is required"
+    },
+    school: {
+      required: "School is required"
     }
   }
 };
