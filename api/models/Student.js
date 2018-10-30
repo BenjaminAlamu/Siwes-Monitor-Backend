@@ -28,6 +28,18 @@ module.exports = {
       type: "string",
       required: true,
       unique: true
+    },
+    school: {
+      model: "school",
+      required: true
+    },
+    staff: {
+      model: "staff",
+      defaultsTo: "N/A"
+    },
+    company: {
+      model: "company",
+      defaultsTo: "N/A"
     }
   },
   validationMessages: {
