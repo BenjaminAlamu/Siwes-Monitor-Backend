@@ -33,12 +33,16 @@ module.exports = {
       required: true,
       unique: true
     },
+    companyDescription: {
+      type: 'string',
+      required: true,
+    }
   },
   validationMessages: {
     companyName: {
-        string: 'Company Name is required',
-        required: 'Company Name is required',
-        unique: 'Company Name already exists, please confirm name'
+      string: 'Company Name is required',
+      required: 'Company Name is required',
+      unique: 'Company Name already exists, please confirm name'
     },
     companyEmail: {
       string: 'Company Email is required',
@@ -58,6 +62,10 @@ module.exports = {
       string: 'Company Phone Number is required',
       required: 'Company Phone Number is required',
       unique: 'Phone Number already exists, please confirm number'
+    },
+    companyDescription: {
+      string: 'Company Description is required',
+      required: 'Company Description is required',
     },
   }
 
