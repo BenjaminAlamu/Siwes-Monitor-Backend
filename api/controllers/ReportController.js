@@ -15,7 +15,7 @@ module.exports = {
         return res.send({
           status: 400,
           success: false,
-          message: "You can't create a report until you have a placment"
+          message: "You can't create a report until you have a placement"
         });
       }
       let payload = req.body;
