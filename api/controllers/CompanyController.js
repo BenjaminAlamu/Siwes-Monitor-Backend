@@ -39,7 +39,7 @@ module.exports = {
         catch(err){
             console.log(err.message);
             res.send({
-                status: 200,
+                status: 400,
                 success: false,
                 message: err.message,
                 err
