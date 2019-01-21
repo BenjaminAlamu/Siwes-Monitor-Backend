@@ -58,7 +58,7 @@ module.exports.connections = {
    ***************************************************************************/
   SiwesDatabase: {
     adapter: 'sails-mongo',
-    mongodb: 'siwes-user:siwes@cluster0-shard-00-00-9zdz9.gcp.mongodb.net:27017,cluster0-shard-00-01-9zdz9.gcp.mongodb.net:27017,cluster0-shard-00-02-9zdz9.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',
+    mongodb: process.env.db_url,
     // host: 'localhost',
     // port: 27017,
     // user: '', //optional
