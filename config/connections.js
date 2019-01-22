@@ -56,8 +56,8 @@ module.exports.connections = {
    *                                                                          *
    ***************************************************************************/
   SiwesDatabase: {
-    adapter: "sails-mongo",
-    mongodb: process.env.db_url,
+    adapter: 'sails-mongo',
+    url: 'mongodb://testds1:testds1@ds231719.mlab.com:31719/hobbyds',
     // host: 'localhost',
     // port: 27017,
     // user: '', //optional
