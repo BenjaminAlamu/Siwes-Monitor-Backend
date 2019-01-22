@@ -20,7 +20,6 @@
  */
 
 module.exports.connections = {
-
   /***************************************************************************
    *                                                                          *
    * Local disk storage for DEVELOPMENT ONLY                                  *
@@ -28,9 +27,9 @@ module.exports.connections = {
    * Installed by default.                                                    *
    *                                                                          *
    ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
-  },
+  // localDiskDb: {
+  //   adapter: 'sails-disk'
+  // },
 
   /***************************************************************************
    *                                                                          *
@@ -57,14 +56,14 @@ module.exports.connections = {
    *                                                                          *
    ***************************************************************************/
   SiwesDatabase: {
-    adapter: 'sails-mongo',
+    adapter: "sails-mongo",
     mongodb: process.env.db_url,
     // host: 'localhost',
     // port: 27017,
     // user: '', //optional
     // password: '', //optional
-    database: 'Siwes-Monitor' //optional
-  },
+    database: "Siwes-Monitor" //optional
+  }
 
   /***************************************************************************
    *                                                                          *
@@ -83,11 +82,9 @@ module.exports.connections = {
   //   database: 'YOUR_POSTGRES_DB' //optional
   // }
 
-
   /***************************************************************************
    *                                                                          *
    * More adapters: https://github.com/balderdashy/sails                      *
    *                                                                          *
    ***************************************************************************/
-
 };
