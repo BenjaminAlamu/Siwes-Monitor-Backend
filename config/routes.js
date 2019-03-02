@@ -113,7 +113,7 @@ module.exports.routes = {
 
   "POST /report/create": {
     controller: "ReportController",
-    action: "studentEnd"
+    action: "create"
   },
   "GET /report/student/view": {
     controller: "ReportController",
