@@ -30,23 +30,23 @@ module.exports = {
     })(req, res);
   },
   //Register function
-  register: function (req, res) {
-    console.log("Create user function");
-    User.create(req.data).exec(function (err, user) {
-      if (err) {
-        success = {
-          "success": false,
-          status: 400,
-        }
-        res.json(success);
-      }
+  async register(req, res) {
+
+    try {
+      await User.create(req.data)
       success = {
         "success": true,
         status: 200,
       }
-      res.json(success);
-    })
-
-  },
+      return res.send(success);
+    }
+    catch (err) {
+      success = {
+        "success": false,
+        status: 400,
+      }
+      return res.send(success)
+    }
+  }
 
 };

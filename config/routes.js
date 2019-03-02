@@ -21,6 +21,21 @@
  */
 
 module.exports.routes = {
+
+
+  /*
+   * Auth Routes
+   */
+  "POST /login": {
+    controller: "AuthController",
+    action: "login"
+  },
+  "POST /register": {
+    controller: "AuthController",
+    action: "register"
+  },
+
+
   /*
      * Company Routes
      */

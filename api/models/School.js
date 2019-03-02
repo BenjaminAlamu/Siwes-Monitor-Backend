@@ -25,12 +25,12 @@ module.exports = {
   },
   validationMessages: {
     schoolName: {
-      string: "First Name is required",
-      required: "First Name is required"
+      string: "School name is required",
+      required: "School Name is required"
     },
     address: {
-      string: "Last Name is required",
-      required: "Last Name  is required"
+      string: "School address is required",
+      required: "School address  is required"
     },
     email: {
       string: "Please enter a valid email address",
@@ -39,4 +39,3 @@ module.exports = {
     },
   }
 };
-
