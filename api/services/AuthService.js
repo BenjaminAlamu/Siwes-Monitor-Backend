@@ -5,30 +5,108 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
   //Login function
-  login: function (req, res) {
-    passport.authenticate('local', function (err, user, info) {
+  async login(req, res) {
+    passport.authenticate('local', async function (err, user, info) {
       console.log("Here");
       //Checks if error is found or if user doesnt exist
       if (err || !user) {
         return res.send({
           success: false,
           status: 400,
-          message: info.message,
+          message: info,
+          err,
           user
         });
       }
+
+      let type = user.type
+      let data;
+      if (type === 'school') {
+        try {
+          data = await School.findOne({
+            where: {
+              userid: user.id
+            }
+          })
+        } catch (err) {
+          res.send({
+            status: 400,
+            success: false,
+            message: err.message,
+            err
+          });
+        }
+      }
+
+      if (type === 'student') {
+        try {
+          data = await Student.findOne({
+            where: {
+              userid: user.id
+            }
+          })
+        } catch (err) {
+          res.send({
+            status: 400,
+            success: false,
+            message: err.message,
+            err
+          });
+        }
+      }
+
+      if (type === 'company') {
+        try {
+          data = await Company.findOne({
+            where: {
+              userid: user.id
+            }
+          })
+        } catch (err) {
+          res.send({
+            status: 400,
+            success: false,
+            message: err.message,
+            err
+          });
+        }
+      }
+
+      if (type === 'staff') {
+        try {
+          data = await Staff.findOne({
+            where: {
+              userid: user.id
+            }
+          })
+        } catch (err) {
+          res.send({
+            status: 400,
+            success: false,
+            message: err.message,
+            err
+          });
+        }
+      }
+
+
       var token = jwt.sign(user, "Secret", (err, token) => {
         expiresIn: 60 * 60 * 24
         res.send({
           success: true,
           status: 200,
           token,
-          user
+          user, data
         });
       });
       // })
     })(req, res);
   },
+
+  async getSchool(data) {
+
+  },
+
 
   //Create Staff
 

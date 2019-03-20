@@ -23,6 +23,23 @@ module.exports = {
                 err
             });
         }
+    },
+
+    liststaff: async function (req, res) {
+        try {
+            const data = await Staff.find({
+                where: {
+                    school: req.body.id
+                }
+            })
+        } catch (err) {
+            res.send({
+                status: 400,
+                success: false,
+                message: err.message,
+                err
+            });
+        }
     }
 };
 

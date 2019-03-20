@@ -103,6 +103,27 @@ module.exports.routes = {
   },
 
   /*
+   * School Routes
+   */
+
+  "POST /school/staff/": {
+    controller: "SchoolController",
+    action: "liststaff"
+  },
+
+  /*
+  * Assignment Routes
+  */
+
+  "POST /school/staff/": {
+    controller: "SchoolController",
+    action: "liststaff"
+  },
+
+
+
+
+  /*
    * Placement Routes
    */
 

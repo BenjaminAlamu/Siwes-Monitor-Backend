@@ -7,12 +7,12 @@ var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt-nodejs');
 
 passport.use(new LocalStrategy({
-    usernameField: 'username',
-    passwordField: 'password'
-  },
-  function (username, password, callback) {
+  usernameField: 'email',
+  passwordField: 'password'
+},
+  function (email, password, callback) {
     User.findOne({
-      username: username
+      email: email
     }).exec(function (err, user) {
 
       if (err) {
@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({
       }
       if (!user) {
         return callback(null, false, {
-          message: 'Invalid username'
+          message: 'Invalid email'
         });
       }
       bcrypt.compare(password, user.password, function (err, res) {
