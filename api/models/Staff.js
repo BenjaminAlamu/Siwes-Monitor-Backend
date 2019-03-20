@@ -34,6 +34,10 @@ module.exports = {
       model: "school",
       required: true
     },
+    userid: {
+      type: "string",
+      required: true,
+    }
   },
   validationMessages: {
     firstName: {

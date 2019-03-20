@@ -57,12 +57,12 @@ module.exports.connections = {
    ***************************************************************************/
   SiwesDatabase: {
     adapter: 'sails-mongo',
-    url: process.env.db_url,
+    url: 'mongodb://root:password1@ds129166.mlab.com:29166/siwes-monitor',
     // host: 'localhost',
     // port: 27017,
     // user: '', //optional
     // password: '', //optional
-    database: "Siwes-Monitor" //optional
+    // database: "Siwes-Monitor" //optional
   }
 
   /***************************************************************************

@@ -10,7 +10,7 @@ var auth = require('../services/AuthService');
 
 module.exports = {
     register: function (req, res) {
-        auth.register(req, res);
+        auth.registerStaff(req, res);
     },
     login: function (req, res) {
 
