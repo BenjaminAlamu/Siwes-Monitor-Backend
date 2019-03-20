@@ -9,8 +9,17 @@ var auth = require('../services/AuthService');
 
 
 module.exports = {
-    register: function (req, res) {
+    registerStaff: function (req, res) {
         auth.registerStaff(req, res);
+    },
+    registerStudent: function (req, res) {
+        auth.registerStudent(req, res);
+    },
+    registerCompany: function (req, res) {
+        auth.registerCompany(req, res);
+    },
+    registerSchool: function (req, res) {
+        auth.registerSchool(req, res);
     },
     login: function (req, res) {
 

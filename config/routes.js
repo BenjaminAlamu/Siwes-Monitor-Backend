@@ -30,11 +30,23 @@ module.exports.routes = {
     controller: "AuthController",
     action: "login"
   },
-  "POST /register": {
+  "POST /school/register": {
     controller: "AuthController",
-    action: "register"
+    action: "registerSchool"
   },
 
+  "POST /staff/register": {
+    controller: "AuthController",
+    action: "registerStaff"
+  },
+  "POST /company/register": {
+    controller: "AuthController",
+    action: "registerCompany"
+  },
+  "POST /student/register": {
+    controller: "AuthController",
+    action: "registerStudent"
+  },
 
   /*
      * Company Routes
