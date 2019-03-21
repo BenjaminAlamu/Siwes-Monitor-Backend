@@ -124,9 +124,14 @@ module.exports.routes = {
   * Assignment Routes
   */
 
-  "POST /school/staff/": {
-    controller: "SchoolController",
-    action: "liststaff"
+  "POST /staff/assign": {
+    controller: "AssignmentCOntroller",
+    action: "create"
+  },
+
+  "POST /staff/assign/list": {
+    controller: "AssignmentCOntroller",
+    action: "list"
   },
 
 
