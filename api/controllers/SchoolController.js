@@ -32,6 +32,11 @@ module.exports = {
                     school: req.body.id
                 }
             })
+            res.send({
+                status: 200,
+                success: true,
+                data
+            });
         } catch (err) {
             res.send({
                 status: 400,

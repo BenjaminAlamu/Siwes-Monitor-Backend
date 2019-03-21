@@ -110,7 +110,7 @@ module.exports.routes = {
    * School Routes
    */
 
-  "POST /school/staff/": {
+  "POST /school/staff": {
     controller: "SchoolController",
     action: "liststaff"
   },
