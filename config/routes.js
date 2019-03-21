@@ -115,6 +115,11 @@ module.exports.routes = {
     action: "liststaff"
   },
 
+  "POST /school/student": {
+    controller: "SchoolController",
+    action: "listStudent"
+  },
+
   /*
   * Assignment Routes
   */

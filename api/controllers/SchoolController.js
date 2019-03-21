@@ -45,6 +45,28 @@ module.exports = {
                 err
             });
         }
+    },
+
+    listStudent: async function (req, res) {
+        try {
+            const data = await Student.find({
+                where: {
+                    school: req.body.id
+                }
+            })
+            res.send({
+                status: 200,
+                success: true,
+                data
+            });
+        } catch (err) {
+            res.send({
+                status: 400,
+                success: false,
+                message: err.message,
+                err
+            });
+        }
     }
 };
 
