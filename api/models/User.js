@@ -54,6 +54,23 @@ module.exports = {
         cb(null, user);
       });
     });
-  }
+  },
 
+  beforeUpdate: function (password, cb) {
+
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function () { }, function (err, hash) {
+        password = hash;
+
+      });
+    });
+  },
+  hashPassword: function (password) {
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function () { }, function (err, hash) {
+        console.log("dds" + hash)
+        return hash
+      });
+    });
+  }
 };

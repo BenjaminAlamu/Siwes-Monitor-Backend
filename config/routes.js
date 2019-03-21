@@ -30,6 +30,10 @@ module.exports.routes = {
     controller: "AuthController",
     action: "login"
   },
+  "POST /change-password": {
+    controller: "AuthController",
+    action: "changePassword"
+  },
   "POST /school/register": {
     controller: "AuthController",
     action: "registerSchool"

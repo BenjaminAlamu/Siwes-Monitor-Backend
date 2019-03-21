@@ -1,6 +1,6 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-
+const bcrypt = require('bcrypt-nodejs');
 
 
 module.exports = {
@@ -222,6 +222,37 @@ module.exports = {
       }
       return res.send(success)
     }
-  }
+  },
+
+  async updatePassword(req, res) {
+
+
+    User.findOne({ id: req.body.id }).then(async function (user) {
+      console.log("hh" + req.body.newPassword)
+
+      await User.update({
+        id: user.id
+      }).set({ password: req.body.newPassword });
+      res.send({
+        status: 200,
+        success: true,
+        data
+      });
+      user.save()
+      success = {
+        "success": true,
+        status: 200,
+      }
+      return res.send(success);
+
+    }).catch(function (err) {
+      success = {
+        "success": false,
+        status: 400,
+        err
+      }
+      return res.send(success)
+    });
+  },
 
 };

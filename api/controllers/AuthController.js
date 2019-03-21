@@ -21,6 +21,10 @@ module.exports = {
     registerSchool: function (req, res) {
         auth.registerSchool(req, res);
     },
+    changePassword: function (req, res) {
+
+        auth.updatePassword(req, res);
+    },
     login: function (req, res) {
 
         auth.login(req, res);
@@ -28,7 +32,6 @@ module.exports = {
     logout: function (req, res) {
         console.log("Pre logout");
         req.logout();
-
     }
 };
 
