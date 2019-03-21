@@ -125,12 +125,12 @@ module.exports.routes = {
   */
 
   "POST /staff/assign": {
-    controller: "AssignmentCOntroller",
+    controller: "AssignmentController",
     action: "create"
   },
 
   "POST /staff/assign/list": {
-    controller: "AssignmentCOntroller",
+    controller: "AssignmentController",
     action: "list"
   },
 
